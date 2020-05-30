@@ -1,0 +1,18 @@
+{
+  "name": "fdobrotv.com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-file-viewer": "^1.2.1",
+    "react-google-docs-viewer": "^1.0.1"
+  }
+}
