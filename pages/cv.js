@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class CVGDOCS extends Component {
+class Cv extends Component {
     render() {
         return (
             <div className="main-div">
@@ -26,4 +26,4 @@ class CVGDOCS extends Component {
     }
 }
 
-export default CVGDOCS;
+export default Cv;

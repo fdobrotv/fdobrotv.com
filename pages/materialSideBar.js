@@ -1,18 +1,18 @@
 import dynamic from 'next/dynamic'
 
 const DynamicComponentWithNoSSR = dynamic(
-    () => import('../components/exampleComponent'),
+    () => import('../components/DrawerComponent'),
     { ssr: false }
 )
 
-function ExampleNossr() {
+function materialSideBar() {
     return (
         <div>
             {/*<Header />*/}
             <DynamicComponentWithNoSSR />
-            <p>HOME PAGE is here!</p>
+            <p>TEST!</p>
         </div>
     )
 }
 
-export default ExampleNossr
+export default materialSideBar
