@@ -2,7 +2,6 @@ import React from 'react'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import Link from '../src/Link';
 
 //FROM: https://dev.to/jsmanifest/create-a-modern-dynamic-sidebar-menu-in-react-using-recursion-36eo
 function SidebarItem({ label, link, items, depthStep = 10, depth = 0, ...rest }) {

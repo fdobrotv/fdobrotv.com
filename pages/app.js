@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import SidebarComponent from "../components/SideBarComponent";
 
 const items = [
     { name: 'home', label: 'Home' },
@@ -40,7 +40,7 @@ const items = [
 function App() {
     return (
         <div>
-            <Sidebar items={items} />
+            <SidebarComponent items={items} />
         </div>
     )
 }

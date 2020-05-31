@@ -28,14 +28,14 @@ class AppBarComponent extends Component {
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                             <Menu/>
                         </IconButton>
-                        <IconButton edge="linkedIn" className={classes.linkedInButton} color="inherit"
+                        <IconButton edge="linkedIn" href="https://linkedin.com/in/fdobrotv" className={classes.linkedInButton} color="inherit"
                                     aria-label="menu">
                             <LinkedIn/>
                         </IconButton>
                         {/*<Typography variant="h6" className={classes.title}>*/}
                         {/*    News*/}
                         {/*</Typography>*/}
-                        <Button className={classes.loginButton} id="login" color="inherit">Login</Button>
+                        {/*<Button className={classes.loginButton} id="login" color="inherit">Login</Button>*/}
                     </Toolbar>
                 </AppBar>
                 <style global jsx>
