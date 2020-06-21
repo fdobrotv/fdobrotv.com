@@ -6,9 +6,9 @@ import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import dynamic from "next/dynamic";
 import SidebarComponent from "../components/SideBarComponent";
-import {CardMedia} from '@material-ui/core';
-import {items} from "../src/sideBarSettings";
+import {sideBarItems} from "../src/sideBarSettings";
 import MyPhotoComponent from "../components/MyPhotoComponent";
+import {Grid} from '@material-ui/core';
 
 const AppBarComponent = dynamic(
     () => import('../components/AppBarComponent')
@@ -16,16 +16,16 @@ const AppBarComponent = dynamic(
 
 const WordCloudComponent = dynamic(
     () => import('../components/WordCloudComponent'),
-    { ssr: false }
+    {ssr: false}
 )
 
 export default function Index() {
     return (
-        <div>
+        <React.Fragment>
             <AppBarComponent/>
             <Box display="flex" flexDirection="row">
                 <Box width={1 / 5}>
-                    <SidebarComponent items={items}/>
+                    <SidebarComponent items={sideBarItems}/>
                 </Box>
                 <Box width={3 / 5}>
                     <Container maxWidth="sm">
@@ -34,31 +34,41 @@ export default function Index() {
                                 Biography
                             </Typography>
                             <Typography>
-                                My name is Dobrotvorskii Fedor, at the age of 6, my parents put me on a PC and I still
-                                can’t
-                                get up.
-                                After several years of research on operation system capabilities,
-                                I decided that I should learn how to write applications and how the internet works.
-                                And now I'm fully consumed and mad by IT ecosystem.
+                                My name is Dobrotvorskii Fedor, I am a JVM languages Senior Backend Developer/team
+                                lead/tech
+                                lead,
+                                who is also continuously learning how to write frontend and mobile applications.
+                                <br/>
+                                My work experience is related to writing Сloud Geo Informational Systems, CRMs and
+                                Marketplace platforms.
                             </Typography>
-                            <Link href="/portfolio" color="secondary">
-                                Look at my works
-                            </Link>
-                            <Link href="/team" color="secondary">
-                                And my team!
-                            </Link>
+                            <Box>
+                                <Link href="/portfolio" color="secondary">
+                                    Look at my works...
+                                </Link>
+                            </Box>
+                            <Box>
+                                <Link href="/team" color="secondary">
+                                    And at my team!
+                                </Link>
+                            </Box>
                             {/*<ProTip/>*/}
-                            <Copyright/>
+
                         </Box>
                     </Container>
-                    <Box display="flex" alignItems="center" justifyContent="center" width="90%" style={{ maxHeight: "100%", overflow: "auto" }}>
+                    <Grid container
+                          direction="row"
+                          justify="center"
+                          alignItems="center">
                         <WordCloudComponent/>
-                    </Box>
+                    </Grid>
+                    <Copyright/>
                 </Box>
                 <Box m={0} alignItems="right" display="flex" flexDirection="row-reverse" width={1 / 5}>
                     <MyPhotoComponent/>
                 </Box>
+
             </Box>
-        </div>
+        </React.Fragment>
     );
 }

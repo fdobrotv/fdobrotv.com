@@ -2,13 +2,16 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import ProTip from '../src/ProTip';
 import Copyright from '../src/Copyright';
 import CardMedia from "@material-ui/core/CardMedia";
 import AppBarComponent from "../components/AppBarComponent";
 import SidebarComponent from "../components/SideBarComponent";
-import {items} from "../src/sideBarSettings";
 import MyPhotoComponent from "../components/MyPhotoComponent";
+import Carousel from 'react-material-ui-carousel'
+import {Grid, Paper} from '@material-ui/core'
+import Button from "@material-ui/core/Button";
+import {sideBarItems} from "../src/sideBarSettings";
+import {portfolioCarouselItems} from "../src/portfolioCarouselItems";
 
 export default function Portfolio() {
     return (
@@ -16,22 +19,29 @@ export default function Portfolio() {
             <AppBarComponent/>
             <Box display="flex" flexDirection="row">
                 <Box width={1 / 5}>
-                    <SidebarComponent items={items}/>
+                    <SidebarComponent items={sideBarItems}/>
                 </Box>
                 <Box width={3 / 5}>
                     <Container maxWidth="sm">
                         <Box my={4}>
                             <Typography variant="h4" component="h1" gutterBottom>
-                                Onaybazar.kz
+                                Onaybazar/Happyfood
                             </Typography>
                             <Typography>
-                                Local market platform for a fresh food with delivery to hands.
+                                Market place platform for goods and food.
+                                <br/>
                             </Typography>
-                            <Box display="flex" alignItems="center" justifyContent="center" width="90%">
-                                <CardMedia style={{maxWidth: '250px'}} component="img"
-                                           image="/images/onaybazar.kz.jpg"/>
-                            </Box>
                             {/*<ProTip/>*/}
+                            <Grid container
+                                  direction="row"
+                                  justify="center"
+                                  alignItems="center">
+                                <Carousel>
+                                    {
+                                        portfolioCarouselItems.map(item => <Item item={item}/>)
+                                    }
+                                </Carousel>
+                            </Grid>
                             <Copyright/>
                         </Box>
                     </Container>
@@ -42,4 +52,20 @@ export default function Portfolio() {
             </Box>
         </div>
     );
+}
+
+function Item(props) {
+    return (
+        <Paper>
+            <h2>{props.item.name}</h2>
+            <p>{props.item.description}</p>
+
+            <CardMedia style={{maxWidth: '550px', maxHeight: '500px'}} component="img"
+                       image={props.item.imageLink}/>
+
+            <Button className="CheckButton" href={props.item.resourceLink}>
+                Look at it!
+            </Button>
+        </Paper>
+    )
 }

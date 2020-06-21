@@ -15,6 +15,7 @@
     "react": "16.13.1",
     "react-d3-cloud": "^0.7.0",
     "react-dom": "16.13.1",
+    "react-material-ui-carousel": "^1.6.0",
     "react-wordcloud": "^1.2.3",
     "typeface-roboto": "0.0.75"
   }

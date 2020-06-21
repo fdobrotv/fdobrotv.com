@@ -8,7 +8,7 @@ import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import AppBarComponent from "../components/AppBarComponent";
 import SidebarComponent from "../components/SideBarComponent";
-import {items} from "../src/sideBarSettings";
+import {sideBarItems} from "../src/sideBarSettings";
 import CardMedia from "@material-ui/core/CardMedia";
 import MyPhotoComponent from "../components/MyPhotoComponent";
 
@@ -18,7 +18,7 @@ export default function About() {
             <AppBarComponent/>
             <Box display="flex" flexDirection="row">
                 <Box width={1 / 5}>
-                    <SidebarComponent items={items}/>
+                    <SidebarComponent items={sideBarItems}/>
                 </Box>
                 <Box my={4}>
                     <Typography variant="h4" component="h1" gutterBottom>
